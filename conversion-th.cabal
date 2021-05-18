@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c52311b2755c3460ef78d85ddc54d3b5c8a0a3102c5d5e3725fea0b3686ca344
+
+name:           conversion-th
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/conversion-th#readme>
+homepage:       https://github.com/githubuser/conversion-th#readme
+bug-reports:    https://github.com/githubuser/conversion-th/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/conversion-th
+
+library
+  exposed-modules:
+      TH.Conversion
+  other-modules:
+      Paths_conversion_th
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , conversion
+    , template-haskell
+  default-language: Haskell2010
+  default-extensions:
+    TemplateHaskell
+    , LambdaCase
+
+executable conversion-th-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_conversion_th
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , conversion-th
+  default-language: Haskell2010
+
+test-suite conversion-th-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_conversion_th
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , conversion-th
+  default-language: Haskell2010
